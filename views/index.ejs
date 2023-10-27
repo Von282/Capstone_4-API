@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's this from?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>What Anime Is This From?</h1>
+        </div>
+        
+    </header>
+    <main>
+        <div class="main-content">
+            <div class="url">
+                <form action="/" method="post" class="user-input" autocomplete="off">
+                    <label for="imgURL">Enter Image URL:</label>
+                    <br />
+                    <input type="url" name="imgURL" class="url-input" placeholder="Image url" required>
+                    <input type="submit" class="submit-button" value="Submit">
+                </form>
+            </div>
+            
+            <% if (!locals.err) { %>
+                <div class="anime-info">
+                    <h2>Anime Information Here:</h2>
+                    <p class="name">Name: <%= name %></p>
+                    <p class="episode">Episode: <%= epi %></p>
+                    <p class="similarity">Similarity: <%= similarity %></p>
+                </div>
+            <% } else { %>
+                <div class="anime-info">
+                    <h2>Anime Information Here:</h2>
+                    <p class="name">Name: <%= name %></p>
+                    <p class="episode">Episode: <%= epi %></p>
+                    <p class="similarity">Similarity: <%= similarity %></p>
+                    <p><%= err %></p>
+                  </div>
+            <% } %>
+           
+        </div>
+        
+    </main>
+</body>
+</html>
